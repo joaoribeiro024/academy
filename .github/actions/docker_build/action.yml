@@ -1,8 +1,8 @@
 name: 'Hello World'
-description: {{ action-description }}
+description: 'Who to greet'
 inputs:
   username:
-    description: 'Says hello to the user'
+    description: 'Who to greet'
     required: false
     default: 'World'
 runs:
