@@ -1,4 +1,4 @@
-name: 'Hello World'
+name: 'docker build'
 description: 'Who to greet'
 inputs:
   username:
