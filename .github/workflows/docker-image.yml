@@ -18,7 +18,8 @@ jobs:
         with:
           path_dockerfile: '../Dockerfile'
           image_name: 'academy'
-          input_tag: 'latest'
+          input_tag: latest
       - name: List docker images
         run: docker images 
+        shell: bash
         
