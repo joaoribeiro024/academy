@@ -13,7 +13,6 @@ inputs:
     required: false
 runs:
   using: composite
-  shell: bash
   steps:
     - name: Check for input tag
       run: |
@@ -25,3 +24,4 @@ runs:
         fi
         echo "DOCKER_IMAGE_NAME=$NAME" >> $GITHUB_ENV 
         docker build . --file ${{inputs.path_dockerfile}} --tag TAG
+      shell: bash

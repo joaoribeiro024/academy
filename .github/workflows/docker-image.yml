@@ -21,5 +21,4 @@ jobs:
           input_tag: latest
       - name: List docker images
         run: docker images 
-        shell: bash
         
