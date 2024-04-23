@@ -12,24 +12,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - uses: actions/checkout@v3
       - name: Build Docker image
         uses: joaoribeiro024/academy/.github/actions/docker_build@main
         with:
           input_tag: latest
           image_name: academy
-      - name: Build Docker image
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Upload docker image
         uses: joaoribeiro024/academy/.github/actions/docker_build_dockerhub@main
         with:
           docker_username: joaoribeiro0go
           image_name: academy
-        env:
-          DOCKER_PASSWORD: ${{ secrets.SECRET_ACTION1 }}
       - name: List docker images
         run: docker images 
         
