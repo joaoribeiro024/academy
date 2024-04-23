@@ -18,6 +18,13 @@ jobs:
         with:
           input_tag: latest
           image_name: academy
+      - name: Build Docker image
+        uses: joaoribeiro024/academy/.github/actions/docker_build_dockerhub@main
+        with:
+          docker_username: ${{ secrets.SECRET_ACTION1 }}joaoribeiro0go
+          image_name: academy
+        env:
+          DOCKER_PASSWORD: ${{ secrets.SECRET_ACTION1 }}
       - name: List docker images
         run: docker images 
         
