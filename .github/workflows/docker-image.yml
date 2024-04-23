@@ -21,7 +21,7 @@ jobs:
       - name: Build Docker image
         uses: joaoribeiro024/academy/.github/actions/docker_build_dockerhub@main
         with:
-          docker_username: ${{ secrets.SECRET_ACTION1 }}joaoribeiro0go
+          docker_username: joaoribeiro0go
           image_name: academy
         env:
           DOCKER_PASSWORD: ${{ secrets.SECRET_ACTION1 }}
