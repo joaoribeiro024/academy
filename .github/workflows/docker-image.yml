@@ -20,5 +20,6 @@ jobs:
           image_name: 'academy'
           input_tag: latest
       - name: List docker images
-        run: docker images 
+        run: docker images
+        
         
