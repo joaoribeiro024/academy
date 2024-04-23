@@ -1,5 +1,4 @@
 name: Docker Image CI
-
 on:
   push:
     branches: [ "main" ]
@@ -17,8 +16,7 @@ jobs:
       - name: Build Docker image
         uses: joaoribeiro024/academy/.github/actions/docker_build@main
         with:
-          username: john_doe
-          path_dockerfile: ./actions/docker_build/action.yml
+          path_dockerfile: ../actions/docker_build/action.yml
           image_name: my_image
           input_tag: latest
       - name: List docker images
