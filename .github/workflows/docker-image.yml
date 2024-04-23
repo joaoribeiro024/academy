@@ -17,6 +17,7 @@ jobs:
         uses: joaoribeiro024/academy/.github/actions/docker_build@main
         with:
           input_tag: latest
+          image_name: academy
       - name: List docker images
         run: docker images 
         
