@@ -5,9 +5,26 @@ inputs:
     description: 'Who to greet'
     required: false
     default: 'World'
+  path_dockerfile:
+    description: 'Dockerfile (optional)'
+    required: false,
+    default: 'Dockerfile'
+  image_name:
+    description: 'Name of the Docker image'
+    required: true
+  input_tag:
+    description: 'Tag for the Docker image (optional)'
+    required: false
 runs:
   using: composite
   steps:
-    - run: |
-        echo "Hello World"
-      shell: bash
+   - name: Check for input tag
+      run: |
+        if [ -z "${{ inputs.input_tag }}" ]; then
+          TAG=$(date +%s)
+          echo "TAG=$TAG" >> $GITHUB_ENV
+        else
+          echo "TAG=${{ inputs.input_tag }}" >> $GITHUB_ENV
+        fi
+        echo "DOCKER_IMAGE_NAME=$NAME" >> $GITHUB_ENV 
+        docker build . --file Dockerfile --tag academy:$(date +%s)
