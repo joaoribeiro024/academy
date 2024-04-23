@@ -16,10 +16,7 @@ jobs:
       - name: Build Docker image
         uses: joaoribeiro024/academy/.github/actions/docker_build@main
         with:
-          path_dockerfile: '../Dockerfile'
-          image_name: 'academy'
           input_tag: latest
       - name: List docker images
-        run: docker images
-        
+        run: docker images 
         
