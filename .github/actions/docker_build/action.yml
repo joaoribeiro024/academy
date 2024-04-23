@@ -1,13 +1,9 @@
 name: 'docker build'
 description: 'Who to greet'
 inputs:
-  username:
-    description: 'Who to greet'
-    required: false
-    default: 'World'
   path_dockerfile:
     description: 'Dockerfile (optional)'
-    required: false,
+    required: false
     default: 'Dockerfile'
   image_name:
     description: 'Name of the Docker image'
@@ -18,7 +14,7 @@ inputs:
 runs:
   using: composite
   steps:
-   - name: Check for input tag
+    - name: Check for input tag
       run: |
         if [ -z "${{ inputs.input_tag }}" ]; then
           TAG=$(date +%s)
