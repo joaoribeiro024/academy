@@ -17,7 +17,7 @@ jobs:
         uses: joaoribeiro024/academy/.github/actions/docker_build@main
         with:
           path_dockerfile: ../actions/docker_build/action.yml
-          image_name: my_image
+          image_name: academy
           input_tag: latest
       - name: List docker images
         run: docker images 
